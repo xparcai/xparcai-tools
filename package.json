@@ -2,6 +2,7 @@
   "name": "xparcai-tools",
   "type": "module",
   "version": "0.0.0",
+  "packageManager": "pnpm@8.12.1",
   "description": "🍒 Some tools in dev.",
   "author": {
     "name": "VictorBo",
