@@ -12,7 +12,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 import extractorSvelte from '@unocss/extractor-svelte'
-import { getCSSPreflights, presetIkun } from '@ikun-ui/preset'
+import { getCSSPreflights, getSafeList, presetIkun } from '@ikun-ui/preset'
 import { localIconCollections } from './collection-icons'
 
 export default defineConfig({
@@ -51,8 +51,7 @@ export default defineConfig({
       getCSS: () => `:root {${getCSSPreflights()}}`,
     },
   ],
+  safelist: [...getSafeList()],
   shortcuts: [],
   rules: [],
-  safelist: [],
-
 })

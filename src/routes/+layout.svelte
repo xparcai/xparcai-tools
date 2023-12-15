@@ -13,6 +13,6 @@
   </div>
 </header>
 
-<main class="p4 xs:w-full">
+<main class="p4 w-1200px ma">
   <slot />
 </main>
