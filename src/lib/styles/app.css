@@ -1,0 +1,9 @@
+html,
+body {
+  --at-apply: min-h-100vh text-ikun-dark-100 bg-ikun-light-300;
+}
+
+html.dark,
+.dark body {
+  --at-apply: text-ikun-light-100 bg-ikun-dark-300;
+}

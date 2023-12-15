@@ -1,4 +1,8 @@
-<h1>Welcome to SvelteKit</h1>
-<p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<script>
+  import { KAvatar } from '@ikun-ui/core'
+</script>
+
+<div class="mt-15vh flex flex-col items-center">
+  <KAvatar size="100px" src="/favicon.png"></KAvatar>
+  <div class="text-28px mt-4">欢迎访问XParCai工具库</div>
+</div>
