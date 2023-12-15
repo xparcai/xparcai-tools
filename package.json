@@ -2,31 +2,71 @@
   "name": "xparcai-tools",
   "type": "module",
   "version": "0.0.0",
-  "private": true,
+  "description": "🍒 Some tools in dev.",
+  "author": {
+    "name": "VictorBo",
+    "email": "hi@vtrbo.cn"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/xparcai/xparcai-tools#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xparcai/xparcai-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xparcai/xparcai-tools/issues"
+  },
+  "keywords": [
+    "tools",
+    "dx"
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
+    "preinstall": "only-allow pnpm",
+    "prepare": "pnpm dlx simple-git-hooks",
+    "precommit": "esno verify-commit.ts",
     "lint": "prettier --check \"./**/*.svelte\" && eslint .",
     "format": "prettier --write \"./**/*.svelte\" && eslint . --fix"
   },
+  "dependencies": {
+    "@ikun-ui/core": "^0.0.16",
+    "@vtrbo/utils": "^0.4.1"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.5",
+    "@antfu/ni": "^0.21.12",
     "@eslint/eslintrc": "^2.1.4",
     "@sveltejs/adapter-auto": "^2.1.1",
     "@sveltejs/kit": "^1.30.3",
+    "@types/node": "^20.10.4",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
+    "@unocss/extractor-svelte": "^0.58.0",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-format": "^0.1.0",
     "eslint-plugin-svelte": "^2.35.1",
+    "esno": "^4.0.0",
+    "lint-staged": "^15.2.0",
+    "only-allow": "^1.2.1",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
+    "simple-git-hooks": "^2.9.0",
     "svelte": "^4.2.8",
     "svelte-check": "^3.6.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
+    "unocss": "^0.57.7",
+    "unplugin-icons": "^0.18.1",
     "vite": "^4.4.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm dlx lint-staged",
+    "commit-msg": "pnpm run precommit"
+  },
+  "lint-staged": {
+    "*": "pnpm run format"
   }
 }
