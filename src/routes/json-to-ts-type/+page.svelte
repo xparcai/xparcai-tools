@@ -29,19 +29,19 @@
   let isChoose = true
 
   function isJsonStr(str: string) {
-    if (!isString(str)) {
+    if (!isString(str))
       return false
-    }
+
     try {
       const jsonObj = getJsonObj(str)
       return isObject(jsonObj)
-    } catch (e) {
+    }
+    catch (e) {
       return false
     }
   }
 
   function getJsonObj(str: string) {
-    // eslint-disable-next-line no-new-func
     return new Function(`return ${str}`)()
   }
 
@@ -53,32 +53,37 @@
         if (isArray(jsonObj[key])) {
           if (isEmptyArr(jsonObj[key])) {
             kv.push([false, key, 'any[]'])
-          } else {
+          }
+          else {
             const typeName = toCamelCase(`${key}-item`, true)
             parseJson(JSON.stringify(jsonObj[key][0]), typeName)
             kv.push([false, key, `${typeName}[]`])
           }
-        } else if (isObject(jsonObj[key])) {
+        }
+        else if (isObject(jsonObj[key])) {
           if (isEmptyObj(jsonObj[key])) {
             kv.push([false, key, 'Record<string, any>'])
-          } else {
+          }
+          else {
             const typeName = toCamelCase(`${key}`, true)
             parseJson(JSON.stringify(jsonObj[key]), typeName)
             kv.push([false, key, typeName])
           }
-        } else {
+        }
+        else {
           kv.push([false, key, toLinesCase(toRawType(jsonObj[key]))])
         }
       }
       tsTypes.unshift([name, kv])
-    } else {
+    }
+    else {
       tsTypes = []
     }
   }
 
   function generateTsType(tsTypesArr: TsType[]) {
     if (tsTypesArr.length > 0) {
-      let typeStrArr: string[] = []
+      const typeStrArr: string[] = []
       tsTypesArr.forEach(([k, v]) => {
         typeStrArr.push(`interface ${k} {`)
         v.forEach(([vc, vk, vv]) => {
@@ -88,7 +93,8 @@
         typeStrArr.push('}')
       })
       copyText(typeStrArr.join('\r\n'))
-    } else {
+    }
+    else {
       copyText('')
     }
     KMessage.success({
@@ -129,7 +135,7 @@
       <KCheckbox
         cls="select-none"
         value={isChoose}
-        on:updateValue={(e) => (isChoose = e.detail)}
+        on:updateValue={e => (isChoose = e.detail)}
       >
         全部可选
       </KCheckbox>
@@ -142,7 +148,7 @@
               {#each tsTypeValue as [optional, key, value], uid}
                 <KInput cls="w-full my-8px first:mt-0 last:mb-0" bind:value>
                   <div
-                    class="flex items-center text-nowrap mr-8px"
+                    class="mr-8px flex items-center text-nowrap"
                     slot="prefix"
                   >
                     <span>{key}</span>
@@ -155,7 +161,7 @@
                         cls="flex ml-8px"
                         uid={`${tsTypeKey}-${tsTypeUid}-${key}-${uid}`}
                         bind:value={optional}
-                        on:updateValue={(e) => (optional = e.detail)}
+                        on:updateValue={e => (optional = e.detail)}
                       >
                         可选
                       </KCheckbox>

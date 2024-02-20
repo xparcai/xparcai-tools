@@ -9,7 +9,7 @@
 <header>
   <KAffix cls="w-full z-100" top={0}>
     <div
-      class="h-56px px-4 fbc shadow bg-white dark:(shadow-light-50 bg-black)"
+      class="h-56px fbc bg-white px-4 shadow dark:(bg-black shadow-light-50)"
     >
       <a href="/">
         <div class="font-500">XParCai Tools</div>
@@ -17,9 +17,9 @@
       <KIcon class="i-carbon:sun dark:i-carbon:moon" on:click={toggle}></KIcon>
     </div>
   </KAffix>
-  <div class="w-full h-56px"></div>
+  <div class="h-56px w-full"></div>
 </header>
 
-<main class="p4 w-1200px ma">
+<main class="ma w-1200px p4">
   <slot />
 </main>
