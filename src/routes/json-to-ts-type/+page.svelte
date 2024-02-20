@@ -110,7 +110,7 @@
     </div>
   </div>
   <KCard shadow="never" title="JSON格式的文本" cls="bg-ikun-light-500">
-    {#if !isJsonStr(jsonCode)}
+    {#if jsonCode && !isJsonStr(jsonCode)}
       <KAlert
         title="请确保输入JSON字符串"
         type="error"
