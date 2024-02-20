@@ -1,0 +1,16 @@
+diff --git a/dist/index.svelte b/dist/index.svelte
+index a412dbae73bec3c4bb06761649c6adf3f55e79ce..092b4d5cd7cac2b314a0d77d9dc710f9280c6b8a 100644
+--- a/dist/index.svelte
++++ b/dist/index.svelte
+@@ -2,7 +2,7 @@
+ import { clsx } from 'clsx';
+ import { KPopover } from '@ikun-ui/popover';
+ import { createEventDispatcher, setContext } from 'svelte';
+-import { KScrollbar } from '@ikun-ui/scrollbar/src/index.js';
++import { KScrollbar } from '@ikun-ui/scrollbar';
+ export let placement = 'bottom';
+ // hover click manual
+ export let trigger = 'hover';
+diff --git a/src/index.ts b/src/index.ts
+deleted file mode 100644
+index c936909325948ff96eae9ef297b3ab5fa2b62e0e..0000000000000000000000000000000000000000

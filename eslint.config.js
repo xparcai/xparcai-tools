@@ -39,8 +39,16 @@ export default eslintConfig(
           '@typescript-eslint/nk-non-null-assertion': 'off',
           '@typescript-eslint/no-explicit-any': 'off',
           'svelte/no-at-html-tags': 'off',
+          'style/brace-style': 'off',
+          'prefer-const': 'off',
+          'style/arrow-parens': 'off',
         },
       },
     ],
   }),
+  {
+    rules: {
+      'no-console': 'off',
+    },
+  },
 )

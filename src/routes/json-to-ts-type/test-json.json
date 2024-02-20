@@ -1,0 +1,22 @@
+{
+  "string": "",
+  "number": 1,
+  "boolean": false,
+  "null": null,
+  "object": {
+    "string": "",
+    "number": 1,
+    "boolean": false,
+    "null": null
+  },
+  "emptyObject": {},
+  "array": [
+    {
+      "string": "",
+      "number": 1,
+      "boolean": false,
+      "null": null
+    }
+  ],
+  "arrayEmpty": []
+}

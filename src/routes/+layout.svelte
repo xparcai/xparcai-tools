@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { KIcon } from '@ikun-ui/core'
 
   const toggle = () => {

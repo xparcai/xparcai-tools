@@ -7,3 +7,7 @@ html.dark,
 .dark body {
   --at-apply: text-ikun-light-100 bg-ikun-dark-300;
 }
+
+input {
+  background: transparent;
+}

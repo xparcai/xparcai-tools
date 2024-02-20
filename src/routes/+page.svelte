@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { KAvatar, KCard } from '@ikun-ui/core'
 </script>
 
@@ -8,6 +8,6 @@
 </div>
 <div class="grid grid-cols-4 grid-gap-10px mt-100px">
   <KCard shadow="never" cls="cursor-pointer fcc">
-    <a href="/JSONToTSType">JSONToTSType</a>
+    <a href="/json-to-ts-type">JSONToTSType</a>
   </KCard>
 </div>
